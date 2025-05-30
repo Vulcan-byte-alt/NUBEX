@@ -21,6 +21,12 @@
             overflow-x: hidden;
         }
 
+        html,
+        body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
         /* Enhanced gradients and effects */
         .hero-gradient {
             background: linear-gradient(135deg, #0a0a1a 0%, #1a1b3a 25%, #2d1b69 50%, #1e40af 75%, #7c3aed 100%);
@@ -2381,135 +2387,121 @@
         </div>
     </section>
 
-    <!-- Enhanced Footer -->
     <footer class="bg-[#0B0D17] text-white border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-16">
                 <!-- Company Info -->
-                <div class="lg:col-span-2">
-                    <div class="logo-container">
-                        <img src="nubex.png" alt="NUBEX Cloud Logo" class="logo-image">
+                <div class="lg:col-span-1">
+                    <!-- Logo aligned with Cloud Services heading -->
+                    <div class="logo-container mb-6 flex items-center h-[24px]">
+                        <img src="nubex.png" alt="NUBEX Cloud Logo"
+                            class="logo-image" style="height: 150px;width: 150px;">
                     </div>
-                    <p class="text-gray-400 mb-8 max-w-md leading-relaxed">
-                        Revolutionizing cloud technology for businesses worldwide with reliable, scalable, and secure
-                        infrastructure solutions that drive digital transformation.
-                    </p>
-
-                    <!-- Contact Information -->
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-map-marker-alt text-blue-400 text-sm"></i>
-                            </div>
-                            <span class="text-gray-400">Dubai Internet City, UAE</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-phone text-green-400 text-sm"></i>
-                            </div>
-                            <span class="text-gray-400">+1-800-NUBEX-24</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-envelope text-purple-400 text-sm"></i>
-                            </div>
-                            <span class="text-gray-400">info@nubex.cloud</span>
-                        </div>
-                    </div>
-
+    
                     <!-- Social Media -->
-                    <div class="flex space-x-4">
+                    <div class="flex space-x-4 mt-8" style="margin-top: 200px;">
                         <a href="#"
-                            class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-blue-600/20 transition-colors group">
-                            <i class="fab fa-twitter text-blue-400 group-hover:scale-110 transition-transform"></i>
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-blue-600/20 transition-colors group">
+                            <i class="fab fa-twitter text-blue-400 group-hover:scale-110 transition-transform text-sm"></i>
                         </a>
                         <a href="#"
-                            class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-blue-600/20 transition-colors group">
-                            <i class="fab fa-linkedin text-blue-400 group-hover:scale-110 transition-transform"></i>
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-blue-600/20 transition-colors group">
+                            <i class="fab fa-linkedin text-blue-400 group-hover:scale-110 transition-transform text-sm"></i>
                         </a>
                         <a href="#"
-                            class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-purple-600/20 transition-colors group">
-                            <i class="fab fa-github text-purple-400 group-hover:scale-110 transition-transform"></i>
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-purple-600/20 transition-colors group">
+                            <i class="fab fa-github text-purple-400 group-hover:scale-110 transition-transform text-sm"></i>
                         </a>
                         <a href="#"
-                            class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-pink-600/20 transition-colors group">
-                            <i class="fab fa-youtube text-pink-400 group-hover:scale-110 transition-transform"></i>
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-pink-600/20 transition-colors group">
+                            <i class="fab fa-youtube text-pink-400 group-hover:scale-110 transition-transform text-sm"></i>
                         </a>
+                    </div>
+    
+                    <div class="text-gray-500 text-xs mt-8">
+                        ©2025 NUBEX Cloud Co.
                     </div>
                 </div>
-
+    
                 <!-- Cloud Services -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-blue-400">Cloud Services</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Infrastructure
+                    <h4 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Cloud Services</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Infrastructure
                                 (IaaS)</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Platform (PaaS)</a>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Platform (PaaS)</a>
                         </li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Software (SaaS)</a>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Software (SaaS)</a>
                         </li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Edge Computing</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">AI & Machine
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Edge Computing</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">AI & Machine
                                 Learning</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Hybrid Cloud</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Hybrid Cloud</a>
+                        </li>
                     </ul>
                 </div>
-
+    
                 <!-- Solutions -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-green-400">Solutions</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">eCommerce</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Finance</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Media &
+                    <h4 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Solutions</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">eCommerce</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Healthcare</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Finance</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Media &
                                 Entertainment</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Government</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Manufacturing</a></li>
-                    </ul>
-                </div>
-
-                <!-- Support & Company -->
-                <div>
-                    <h4 class="text-lg font-bold mb-6 text-purple-400">Support & Company</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Knowledge Base</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">System Status</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Customer Success</a>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Government</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Manufacturing</a>
                         </li>
                     </ul>
                 </div>
-            </div>
-
-            <!-- Newsletter Signup -->
-            <div class="border-t border-gray-800 mt-12 pt-8">
-                <div class="glass-card p-8 rounded-2xl mb-8">
-                    <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">Stay Updated</h3>
-                        <p class="text-gray-300">Get the latest cloud insights, product updates, and industry news
-                            delivered to your inbox.</p>
+    
+                <!-- Support -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6 text-sm uppercase tracking-wider">Support</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Documentation</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Knowledge Base</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">System Status</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Customer
+                                Success</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Newsletter Signup -->
+                <div>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-envelope text-blue-400 text-lg mr-3"></i>
                     </div>
-                    <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                        <input type="email" placeholder="Enter your email"
-                            class="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500">
+                    <h4 class="text-white font-semibold mb-3 text-lg">Inboxes love NUBEX.</h4>
+                    <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                        Make sure you get all the content, tips, and news you can use.
+                    </p>
+    
+                    <div class="space-y-4">
+                        <input type="email" placeholder="Work Email"
+                            class="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm">
                         <button
-                            class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all font-semibold">
-                            Subscribe
+                            class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all font-medium text-sm border border-blue-600">
+                            Yes, send me emails
                         </button>
                     </div>
                 </div>
             </div>
-
+    
             <!-- Bottom Footer -->
-            <div class="border-t border-gray-800 pt-8">
+            <div class="border-t border-gray-800 mt-16 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
-                        © 2025 NUBEX Cloud. All rights reserved.
+                    <div class="text-gray-500 text-xs mb-4 md:mb-0">
+    
                     </div>
-                    <div class="flex space-x-6 text-sm">
+                    <div class="flex space-x-8 text-xs">
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
@@ -2518,7 +2510,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+        </footer>
 
     <!-- Price Calculator Modal -->
     <div id="calculator-modal" class="modal-overlay">

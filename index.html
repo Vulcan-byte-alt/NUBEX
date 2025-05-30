@@ -2535,11 +2535,11 @@
                     <div>
                         <label class="block text-gray-700 font-semibold mb-2">Service Type</label>
                         <select id="service-type"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                            <option value="cloud-server">Cloud Server</option>
-                            <option value="dedicated-server">Dedicated Server</option>
-                            <option value="gpu-server">GPU Server</option>
-                            <option value="storage">Storage</option>
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 text-black">
+                            <option value="cloud-server" class="text-black">Cloud Server</option>
+                            <option value="dedicated-server" class="text-black">Dedicated Server</option>
+                            <option value="gpu-server" class="text-black">GPU Server</option>
+                            <option value="storage" class="text-black">Storage</option>
                         </select>
                     </div>
 
@@ -2576,12 +2576,12 @@
                     <div>
                         <label class="block text-gray-700 font-semibold mb-2">Region</label>
                         <select id="region"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                            <option value="us-east">US East (N. Virginia)</option>
-                            <option value="us-west">US West (California)</option>
-                            <option value="eu-west">Europe (Ireland)</option>
-                            <option value="ap-southeast">Asia Pacific (Singapore)</option>
-                            <option value="me-south">Middle East (Dubai)</option>
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 text-black">
+                            <option value="us-east" class="text-black" selected>US East (N. Virginia)</option>
+                            <option value="us-west" class="text-black">US West (California)</option>
+                            <option value="eu-west" class="text-black">Europe (Ireland)</option>
+                            <option value="ap-southeast" class="text-black">Asia Pacific (Singapore)</option>
+                            <option value="me-south" class="text-black">Middle East (Dubai)</option>
                         </select>
                     </div>
                 </div>
@@ -2592,27 +2592,27 @@
                     <div class="space-y-4 mb-6">
                         <div class="flex justify-between items-center">
                             <span class="text-gray-600">Base Price:</span>
-                            <span class="font-semibold" id="base-price">€15.50/month</span>
+                            <span class="font-semibold text-black" id="base-price">€15.50/month</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-gray-600">CPU Upgrade:</span>
-                            <span class="font-semibold" id="cpu-price">€12.00/month</span>
+                            <span class="font-semibold text-black" id="cpu-price">€12.00/month</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-gray-600">Memory Upgrade:</span>
-                            <span class="font-semibold" id="memory-price">€8.00/month</span>
+                            <span class="font-semibold text-black" id="memory-price">€8.00/month</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-gray-600">Storage:</span>
-                            <span class="font-semibold" id="storage-price">€5.00/month</span>
+                            <span class="font-semibold text-black" id="storage-price">€5.00/month</span>
                         </div>
                         <hr class="my-4">
                         <div class="flex justify-between items-center text-xl font-bold">
-                            <span>Total Monthly:</span>
+                            <span class="text-black">Total Monthly:</span>
                             <span class="text-blue-600" id="total-price">€40.50/month</span>
                         </div>
                         <div class="flex justify-between items-center text-lg">
-                            <span>Annual (20% off):</span>
+                            <span class="text-black">Annual (20% off):</span>
                             <span class="text-green-600" id="annual-price">€388.80/year</span>
                         </div>
                     </div>

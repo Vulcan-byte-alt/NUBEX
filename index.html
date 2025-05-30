@@ -1,0 +1,2955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <title>NUBEX Cloud - Your Trusted Cloud Service Provider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #0B0D17;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Enhanced gradients and effects */
+        .hero-gradient {
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1b3a 25%, #2d1b69 50%, #1e40af 75%, #7c3aed 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.4) 70%);
+        }
+
+        .dark-gradient-bg {
+            background: linear-gradient(135deg, #0B0D17 0%, #1a1d2e 25%, #0f1629 50%, #1e293b 75%, #0B0D17 100%);
+            position: relative;
+        }
+
+        .dark-gradient-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+        }
+
+        .white-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 25%, #f1f5f9 50%, #e2e8f0 75%, #f8fafc 100%);
+            color: #1e293b;
+            position: relative;
+        }
+
+        .white-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at center, rgba(34, 197, 94, 0.05) 0%, transparent 70%);
+        }
+
+        .white-section h2,
+        .white-section h3,
+        .white-section h4 {
+            color: #1e293b;
+        }
+
+        .white-section .gradient-text {
+            background: linear-gradient(135deg, #1e40af, #7c3aed, #ec4899, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(96, 165, 250, 0.4);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .white-glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #1e293b;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .white-glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: rgba(59, 130, 246, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa, #a855f7, #ec4899, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Modern navbar */
+        .modern-navbar {
+            background: rgba(11, 13, 23, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: #60a5fa;
+            background: rgba(96, 165, 250, 0.1);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #60a5fa, #a855f7);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Logo styling */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            space-x: 12px;
+        }
+
+        .logo-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 12px;
+            object-fit: cover;
+            filter: invert(1);
+        }
+
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #60a5fa, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(96, 165, 250, 0.4);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Enhanced dashboard styling */
+        .modern-dashboard {
+            background: linear-gradient(145deg, #0f1419 0%, #1a1f2e 50%, #0f1419 100%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            border-radius: 2rem;
+            overflow: hidden;
+        }
+
+        .dashboard-header {
+            background: linear-gradient(90deg, #1e293b, #334155);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dashboard-metric {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(168, 85, 247, 0.15));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-metric::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #60a5fa, #a855f7);
+        }
+
+        .dashboard-metric:hover {
+            transform: scale(1.05);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        /* Performance chart */
+        .chart-container {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(145deg, rgba(15, 20, 25, 0.8), rgba(26, 31, 46, 0.8));
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chart-bar {
+            background: linear-gradient(to top, #3b82f6, #60a5fa, #93c5fd);
+            border-radius: 4px 4px 0 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .chart-bar:hover {
+            transform: scaleY(1.1);
+            filter: brightness(1.2);
+        }
+
+        /* Activity feed styling */
+        .activity-item {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(59, 130, 246, 0.1));
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .activity-item:hover {
+            transform: translateX(4px);
+            border-color: rgba(34, 197, 94, 0.4);
+        }
+
+        /* Server auction styling */
+        .auction-card {
+            background: linear-gradient(135deg, rgba(255, 99, 71, 0.1), rgba(255, 140, 0, 0.1));
+            border: 2px solid rgba(255, 99, 71, 0.3);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auction-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6347, #ff8c00, #ffa500);
+        }
+
+        .auction-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 99, 71, 0.2);
+            border-color: rgba(255, 99, 71, 0.5);
+        }
+
+        .timer-display {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            font-weight: 900;
+            text-align: center;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        /* Modal styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        /* Award cards */
+        .award-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .award-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffd700, #ffed4e, #fbbf24);
+        }
+
+        .award-card:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .award-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 16px;
+            border: 3px solid rgba(255, 215, 0, 0.3);
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Enhanced animations */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                opacity: 0.8;
+                box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+            }
+
+            50% {
+                opacity: 1;
+                box-shadow: 0 0 30px rgba(96, 165, 250, 0.6);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .floating {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .animate-slide-up {
+            animation: slideInUp 1s ease-out;
+        }
+
+        .animate-slide-left {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .animate-slide-right {
+            animation: slideInRight 1s ease-out;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Solution card with image on top */
+        .solution-card-wrapper {
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .solution-card-wrapper:hover {
+            transform: translateY(-8px);
+        }
+
+        .solution-image-top {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 1rem 1rem 0 0;
+        }
+
+        .solution-content-attached {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: none;
+            border-radius: 0 0 1rem 1rem;
+            margin-top: -1px;
+        }
+
+        /* Seamless section transitions */
+        .seamless-dark {
+            background: linear-gradient(180deg, #0B0D17 0%, #1a1d2e 25%, #0f1629 50%, #1e293b 75%, #0B0D17 100%);
+            position: relative;
+        }
+
+        .seamless-dark::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(168, 85, 247, 0.08) 0%, transparent 50%);
+        }
+
+        /* Contact form styling */
+        .contact-form-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form-input:focus {
+            outline: none;
+            border-color: #60a5fa;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+        }
+
+        .contact-form-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Testimonial cards */
+        .testimonial-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* News card effects */
+        .news-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
+            overflow: hidden;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover .news-image {
+            transform: scale(1.05);
+        }
+
+        /* FAQ accordion */
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .faq-answer.active {
+            max-height: 200px;
+        }
+
+        /* Testimonial images */
+        .testimonial-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(96, 165, 250, 0.3);
+        }
+
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Enhanced Modern Navigation -->
+    <nav class="fixed top-0 w-full z-50 modern-navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="logo-container">
+                    <img src="nubex.png" alt="NUBEX Cloud Logo" class="logo-image">
+                </div>
+
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="#home" class="nav-link text-gray-300">Home</a>
+                    <a href="#services" class="nav-link text-gray-300">Products</a>
+                    <a href="#solutions" class="nav-link text-gray-300">Solutions</a>
+                    <a href="#pricing" class="nav-link text-gray-300">Pricing</a>
+                    <a href="#contact" class="nav-link text-gray-300">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button
+                        class="hidden md:block bg-transparent border border-blue-500/30 text-blue-400 px-6 py-3 rounded-xl hover:bg-blue-500/10 transition-all font-medium">
+                        Login
+                    </button>
+                    <button
+                        class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-xl transition-all font-medium shadow-lg">
+                        Sign Up Free
+                    </button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-300">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0B0D17]/95 border-b border-white/10">
+            <div class="px-4 py-4 space-y-4">
+                <a href="#home" class="block text-gray-300 hover:text-blue-400 transition-colors py-2">Home</a>
+                <a href="#services" class="block text-gray-300 hover:text-blue-400 transition-colors py-2">Products</a>
+                <a href="#solutions"
+                    class="block text-gray-300 hover:text-blue-400 transition-colors py-2">Solutions</a>
+                <a href="#success-stories"
+                    class="block text-gray-300 hover:text-blue-400 transition-colors py-2">Success Stories</a>
+                <a href="#pricing" class="block text-gray-300 hover:text-blue-400 transition-colors py-2">Pricing</a>
+                <a href="#news" class="block text-gray-300 hover:text-blue-400 transition-colors py-2">News</a>
+                <a href="#contact" class="block text-gray-300 hover:text-blue-400 transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Enhanced Hero Section with Modern Dashboard -->
+    <section id="home" class="relative pt-32 pb-24 overflow-hidden hero-gradient">
+        <!-- Dynamic floating particles -->
+        <div class="absolute inset-0">
+            <div class="particle absolute top-20 left-10 bg-blue-400 animate-pulse" style="animation-delay: 0s;"></div>
+            <div class="particle absolute top-40 right-20 bg-purple-400 animate-ping" style="animation-delay: 1s;">
+            </div>
+            <div class="particle absolute bottom-40 left-1/4 bg-pink-400 animate-pulse" style="animation-delay: 2s;">
+            </div>
+            <div class="particle absolute top-60 left-1/3 bg-blue-300 animate-ping" style="animation-delay: 3s;"></div>
+            <div class="particle absolute bottom-20 right-1/3 bg-green-400 animate-pulse" style="animation-delay: 4s;">
+            </div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Top: Main Heading Section with Enhanced Animation -->
+            <div class="text-center mb-16">
+                <div
+                    class="inline-block mb-6 px-4 py-2 bg-white/10 backdrop-blur-sm border border-blue-500/30 rounded-full text-sm text-blue-300 fade-in-element">
+                    <i class="fas fa-rocket mr-2"></i>A NEW ERA OF CLOUD COMPUTING
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight fade-in-element"
+                    style="animation-delay: 0.2s;">
+                    Build boldly, ship fearlessly,
+                    <br><span class="gradient-text">optimize relentlessly.</span>
+                </h1>
+
+                <p class="text-xl text-gray-300 mb-10 leading-relaxed max-w-4xl mx-auto fade-in-element"
+                    style="animation-delay: 0.4s;">
+                    Guard every release, deliver AI apps faster, and maximize impact with our comprehensive cloud
+                    platform.
+                    Drive digital transformation with NUBEX Cloud's powerful enterprise solutions.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 mb-12 justify-center fade-in-element"
+                    style="animation-delay: 0.6s;">
+                    <button
+                        class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl transition-all font-bold text-lg shadow-xl">
+                        <i class="fas fa-rocket mr-2"></i>Get Started
+                    </button>
+                    <button
+                        class="bg-white/5 border border-white/20 text-white px-8 py-4 rounded-xl hover:bg-white/10 transition-all font-bold text-lg">
+                        <i class="fas fa-play mr-2"></i>Start Free Trial
+                    </button>
+                </div>
+
+                <!-- Quick stats -->
+                <div class="grid grid-cols-4 gap-4 max-w-2xl mx-auto fade-in-element" style="animation-delay: 0.8s;">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-400">99.9%</div>
+                        <div class="text-xs text-gray-400">Uptime</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-green-400">24/7</div>
+                        <div class="text-xs text-gray-400">Support</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-purple-400">150+</div>
+                        <div class="text-xs text-gray-400">Countries</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-pink-400">10K+</div>
+                        <div class="text-xs text-gray-400">Customers</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Modern Dashboard Mockup -->
+            <div class="relative fade-in-element" style="animation-delay: 1s;">
+                <div class="modern-dashboard max-w-6xl mx-auto">
+                    <!-- Dashboard header -->
+                    <div class="dashboard-header flex items-center justify-between p-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            </div>
+                            <span class="text-white font-semibold">NUBEX Cloud Console</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center space-x-2 text-green-400">
+                                <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                                <span class="text-sm">Live</span>
+                            </div>
+                            <i class="fas fa-expand text-gray-400 hover:text-white cursor-pointer"></i>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard content -->
+                    <div class="p-8 space-y-8">
+                        <!-- Top metrics with enhanced styling -->
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                            <div class="dashboard-metric p-6 text-center group cursor-pointer">
+                                <div class="flex items-center justify-center mb-3">
+                                    <i class="fas fa-cloud text-blue-400 text-2xl"></i>
+                                </div>
+                                <div class="text-3xl font-bold text-white mb-2">847</div>
+                                <div class="text-gray-400 text-sm">Active Instances</div>
+                                <div class="text-green-400 text-xs mt-1">+12% from yesterday</div>
+                            </div>
+                            <div class="dashboard-metric p-6 text-center group cursor-pointer">
+                                <div class="flex items-center justify-center mb-3">
+                                    <i class="fas fa-database text-purple-400 text-2xl"></i>
+                                </div>
+                                <div class="text-3xl font-bold text-white mb-2">2.4TB</div>
+                                <div class="text-gray-400 text-sm">Storage Used</div>
+                                <div class="text-blue-400 text-xs mt-1">Optimal usage</div>
+                            </div>
+                            <div class="dashboard-metric p-6 text-center group cursor-pointer">
+                                <div class="flex items-center justify-center mb-3">
+                                    <i class="fas fa-network-wired text-green-400 text-2xl"></i>
+                                </div>
+                                <div class="text-3xl font-bold text-white mb-2">34ms</div>
+                                <div class="text-gray-400 text-sm">Global Latency</div>
+                                <div class="text-green-400 text-xs mt-1">Excellent</div>
+                            </div>
+                            <div class="dashboard-metric p-6 text-center group cursor-pointer">
+                                <div class="flex items-center justify-center mb-3">
+                                    <i class="fas fa-shield-alt text-pink-400 text-2xl"></i>
+                                </div>
+                                <div class="text-3xl font-bold text-white mb-2">100%</div>
+                                <div class="text-gray-400 text-sm">Security Score</div>
+                                <div class="text-green-400 text-xs mt-1">All systems secure</div>
+                            </div>
+                        </div>
+
+                        <!-- Performance Chart -->
+                        <div class="glass-card p-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-white font-semibold text-lg">Performance Overview</h3>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-green-400 text-sm">●</span>
+                                    <span class="text-gray-400 text-sm">Real-time</span>
+                                </div>
+                            </div>
+                            <div
+                                class="chart-container relative overflow-hidden bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-lg">
+                                <svg class="absolute inset-0 w-full h-full" preserveAspectRatio="none"
+                                    viewBox="0 0 400 200">
+                                    <!-- Background waves -->
+                                    <path class="wave-1" d="M0,100 C100,50 200,150 400,100 L400,200 L0,200 Z"
+                                        fill="url(#waveGradient1)" opacity="0.3" />
+                                    <path class="wave-2" d="M0,120 C150,70 250,170 400,120 L400,200 L0,200 Z"
+                                        fill="url(#waveGradient2)" opacity="0.4" />
+                                    <path class="wave-3" d="M0,140 C120,90 280,190 400,140 L400,200 L0,200 Z"
+                                        fill="url(#waveGradient3)" opacity="0.5" />
+
+                                    <!-- Hot Pink to Electric Purple -->
+                                    <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#ff1493" />
+                                        <stop offset="100%" style="stop-color:#9400d3" />
+                                    </linearGradient>
+
+                                    <!-- Electric Blue to Neon Pink -->
+                                    <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#00bfff" />
+                                        <stop offset="100%" style="stop-color:#ff0080" />
+                                    </linearGradient>
+
+                                    <!-- Neon Green to Electric Orange -->
+                                    <linearGradient id="waveGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#39ff14" />
+                                        <stop offset="100%" style="stop-color:#ff4500" />
+                                    </linearGradient>
+                                    </defs>
+                                </svg>
+
+                                <!-- Performance Stats Overlay -->
+                                <div class="relative z-10 flex items-center justify-center h-full">
+                                    <div class="text-center bg-black/20 backdrop-blur-sm rounded-lg p-4">
+                                        <div class="text-4xl font-bold text-white mb-2">98.7%</div>
+                                        <div class="text-sm text-blue-200">System Performance</div>
+                                        <div class="text-xs text-gray-300 mt-1">↗ +2.3% from yesterday</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <style>
+                                .wave-1 {
+                                    animation: wave-animation-1 8s ease-in-out infinite;
+                                }
+
+                                .wave-2 {
+                                    animation: wave-animation-2 6s ease-in-out infinite reverse;
+                                }
+
+                                .wave-3 {
+                                    animation: wave-animation-3 10s ease-in-out infinite;
+                                }
+
+                                @keyframes wave-animation-1 {
+
+                                    0%,
+                                    100% {
+                                        d: path("M0,100 C100,50 200,150 400,100 L400,200 L0,200 Z");
+                                    }
+
+                                    50% {
+                                        d: path("M0,120 C150,70 250,170 400,120 L400,200 L0,200 Z");
+                                    }
+                                }
+
+                                @keyframes wave-animation-2 {
+
+                                    0%,
+                                    100% {
+                                        d: path("M0,120 C150,70 250,170 400,120 L400,200 L0,200 Z");
+                                    }
+
+                                    50% {
+                                        d: path("M0,100 C200,60 300,160 400,100 L400,200 L0,200 Z");
+                                    }
+                                }
+
+                                @keyframes wave-animation-3 {
+
+                                    0%,
+                                    100% {
+                                        d: path("M0,140 C120,90 280,190 400,140 L400,200 L0,200 Z");
+                                    }
+
+                                    50% {
+                                        d: path("M0,160 C180,110 320,210 400,160 L400,200 L0,200 Z");
+                                    }
+                                }
+                            </style>
+                        </div>
+
+                        <!-- Split layout: Resource Usage and Live activity feed -->
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Resource Usage -->
+                            <div class="glass-card p-6">
+                                <h4 class="text-white font-semibold text-lg mb-6 flex items-center">
+                                    <i class="fas fa-chart-pie text-blue-400 mr-2"></i>
+                                    Resource Usage
+                                </h4>
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-300">CPU Usage</span>
+                                        <span class="text-blue-400 font-semibold">67%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-700 rounded-full h-2">
+                                        <div class="bg-blue-400 h-2 rounded-full" style="width: 67%"></div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-300">Memory</span>
+                                        <span class="text-purple-400 font-semibold">84%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-700 rounded-full h-2">
+                                        <div class="bg-purple-400 h-2 rounded-full" style="width: 84%"></div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-300">Bandwidth</span>
+                                        <span class="text-green-400 font-semibold">52%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-700 rounded-full h-2">
+                                        <div class="bg-green-400 h-2 rounded-full" style="width: 52%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Enhanced Live activity feed -->
+                            <div class="space-y-4">
+                                <h4 class="text-white font-semibold text-lg flex items-center">
+                                    <i class="fas fa-pulse text-green-400 mr-2"></i>
+                                    Live Activity
+                                </h4>
+                                <div class="space-y-3 max-h-80 overflow-hidden">
+                                    <div class="activity-item p-4">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                                            <div class="flex-1">
+                                                <div class="text-white text-sm font-medium">Auto-scaling triggered +3
+                                                    instances</div>
+                                                <div class="text-gray-400 text-xs">2 minutes ago • us-east-1</div>
+                                            </div>
+                                            <i class="fas fa-server text-green-400"></i>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item p-4">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                                            <div class="flex-1">
+                                                <div class="text-white text-sm font-medium">CDN cache refreshed globally
+                                                </div>
+                                                <div class="text-gray-400 text-xs">5 minutes ago • Global</div>
+                                            </div>
+                                            <i class="fas fa-globe text-blue-400"></i>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item p-4">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
+                                            <div class="flex-1">
+                                                <div class="text-white text-sm font-medium">Database backup completed
+                                                </div>
+                                                <div class="text-gray-400 text-xs">8 minutes ago • eu-west-1</div>
+                                            </div>
+                                            <i class="fas fa-database text-purple-400"></i>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item p-4">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
+                                            <div class="flex-1">
+                                                <div class="text-white text-sm font-medium">Security scan passed</div>
+                                                <div class="text-gray-400 text-xs">12 minutes ago • All regions</div>
+                                            </div>
+                                            <i class="fas fa-shield-alt text-orange-400"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Impact Section -->
+    <section class="py-24 seamless-dark">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl lg:text-6xl font-black mb-6">
+                    Huge impact, at an <span class="gradient-text">incredible scale.</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Partnered & backed by strong infrastructure and powerful resources, NUBEX delivers global services
+                    with exceptional quality and unmatched performance that transforms businesses worldwide.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="glass-card p-8 text-center group reveal">
+                    <div class="stats-counter mb-4">90%</div>
+                    <div class="text-white font-semibold mb-2">Faster deployments</div>
+                    <div class="text-sm text-gray-400">than traditional infrastructure</div>
+                    <div class="mt-4 text-green-400">
+                        <i class="fas fa-arrow-up text-2xl"></i>
+                    </div>
+                </div>
+                <div class="glass-card p-8 text-center group reveal">
+                    <div class="stats-counter mb-4">95%</div>
+                    <div class="text-white font-semibold mb-2">Cost reduction</div>
+                    <div class="text-sm text-gray-400">in operational expenses</div>
+                    <div class="mt-4 text-blue-400">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                </div>
+                <div class="glass-card p-8 text-center group reveal">
+                    <div class="stats-counter mb-4">25%</div>
+                    <div class="text-white font-semibold mb-2">Performance boost</div>
+                    <div class="text-sm text-gray-400">in application response times</div>
+                    <div class="mt-4 text-purple-400">
+                        <i class="fas fa-rocket text-2xl"></i>
+                    </div>
+                </div>
+                <div class="glass-card p-8 text-center group reveal">
+                    <div class="text-4xl font-black gradient-text mb-4">11 quadrillion</div>
+                    <div class="text-white font-semibold mb-2">Operations per second</div>
+                    <div class="text-sm text-gray-400">processing capability</div>
+                    <div class="mt-4 text-orange-400">
+                        <i class="fas fa-server text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Services Section (White Background with Enhanced Gradient) -->
+    <section id="services" class="py-24 white-section">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl lg:text-6xl font-black mb-6">
+                    Empower Your Business with <span class="gradient-text">Our Cloud Services</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    We offer a comprehensive range of cloud services designed to meet the diverse needs of our clients
+                    with scalable, flexible, and cost-effective solutions that drive innovation.
+                </p>
+            </div>
+
+            <!-- Service Categories -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="white-glass-card p-8 reveal">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-server text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Infrastructure as a Service</h3>
+                    <p class="text-gray-600 mb-6">Scalable computing resources including virtual machines, storage, and
+                        networking solutions that grow with your business needs.</p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            <span class="text-gray-600 text-sm">Cloud Server (Virtual Machines)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            <span class="text-gray-600 text-sm">Elastic Block Storage</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            <span class="text-gray-600 text-sm">Virtual Private Cloud (VPC)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            <span class="text-gray-600 text-sm">Load Balancer & CDN</span>
+                        </div>
+                    </div>
+
+                    <button
+                        class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white py-3 rounded-lg transition-all font-semibold">
+                        Explore IaaS
+                    </button>
+                </div>
+
+                <div class="white-glass-card p-8 reveal">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-layer-group text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Platform as a Service</h3>
+                    <p class="text-gray-600 mb-6">Development platforms and tools to build, deploy, and manage
+                        applications efficiently without managing underlying infrastructure.</p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            <span class="text-gray-600 text-sm">Container Service</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            <span class="text-gray-600 text-sm">Cloud Functions (Serverless)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            <span class="text-gray-600 text-sm">Database Service</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            <span class="text-gray-600 text-sm">AI & ML Services</span>
+                        </div>
+                    </div>
+
+                    <button
+                        class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-lg transition-all font-semibold">
+                        Explore PaaS
+                    </button>
+                </div>
+
+                <div class="white-glass-card p-8 reveal">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-cloud text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Software as a Service</h3>
+                    <p class="text-gray-600 mb-6">Ready-to-use applications and business solutions accessible from
+                        anywhere, eliminating the need for local installations.</p>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            <span class="text-gray-600 text-sm">Office Productivity Suite</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            <span class="text-gray-600 text-sm">Customer Relationship Management</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            <span class="text-gray-600 text-sm">Collaboration Tools</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            <span class="text-gray-600 text-sm">Data Analytics Service</span>
+                        </div>
+                    </div>
+
+                    <button
+                        class="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white py-3 rounded-lg transition-all font-semibold">
+                        Explore SaaS
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cloud Service Types -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div class="white-glass-card p-6 text-center reveal">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-globe text-white"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Public Cloud</h4>
+                    <p class="text-gray-600 text-sm">Scalable, cost-effective solutions for businesses of all sizes</p>
+                </div>
+                <div class="white-glass-card p-6 text-center reveal">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lock text-white"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Private Cloud</h4>
+                    <p class="text-gray-600 text-sm">Enhanced security and control for sensitive workloads</p>
+                </div>
+                <div class="white-glass-card p-6 text-center reveal">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-network-wired text-white"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Hybrid Cloud</h4>
+                    <p class="text-gray-600 text-sm">Best of both worlds with flexible deployment options</p>
+                </div>
+                <div class="white-glass-card p-6 text-center reveal">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-microchip text-white"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Edge Computing</h4>
+                    <p class="text-gray-600 text-sm">Ultra-low latency computing at the network edge</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Solutions Section with Images on Top -->
+    <section id="solutions" class="py-24 seamless-dark">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl lg:text-6xl font-black mb-6">
+                    Tailored <span class="gradient-text">Solutions</span> for Every Industry
+                </h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    We offer specialized solutions designed to cater to the specific needs of businesses across various
+                    industries, delivering innovation and efficiency at scale.
+                </p>
+            </div>
+
+            <!-- Industry Grid with Images -->
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-6 mb-16">
+                <div class="glass-card p-6 text-center group hover:scale-105 transition-all reveal">
+                    <img src="https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Retail" class="w-16 h-16 mx-auto mb-3 rounded-full object-cover">
+                    <div class="text-white font-semibold text-sm">Retail</div>
+                </div>
+                <div class="glass-card p-6 text-center group hover:scale-105 transition-all reveal">
+                    <img src="https://images.unsplash.com/photo-1598302936625-6075fbd98dd7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Manufacturing" class="w-16 h-16 mx-auto mb-3 rounded-full object-cover">
+                    <div class="text-white font-semibold text-sm">Manufacturing</div>
+                </div>
+                <div class="glass-card p-6 text-center group hover:scale-105 transition-all reveal">
+                    <img src="https://images.unsplash.com/photo-1625516581237-3d9d0a31538c?q=80&w=2044&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Government" class="w-16 h-16 mx-auto mb-3 rounded-full object-cover">
+                    <div class="text-white font-semibold text-sm">Government</div>
+                </div>
+                <div class="glass-card p-6 text-center group hover:scale-105 transition-all reveal">
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=80&h=80&fit=crop&crop=center"
+                        alt="AI & Tech" class="w-16 h-16 mx-auto mb-3 rounded-full object-cover">
+                    <div class="text-white font-semibold text-sm">AI & Tech</div>
+                </div>
+                <div class="glass-card p-6 text-center group hover:scale-105 transition-all reveal">
+                    <img src="https://images.unsplash.com/photo-1534951009808-766178b47a4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Finance" class="w-16 h-16 mx-auto mb-3 rounded-full object-cover">
+                    <div class="text-white font-semibold text-sm">Finance</div>
+                </div>
+                <div class="glass-card p-6 text-center group hover:scale-105 transition-all reveal">
+                    <img src="https://plus.unsplash.com/premium_photo-1673953509975-576678fa6710?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Healthcare" class="w-16 h-16 mx-auto mb-3 rounded-full object-cover">
+                    <div class="text-white font-semibold text-sm">Healthcare</div>
+                </div>
+            </div>
+
+            <!-- Solution Cards with Images on Top -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="solution-card-wrapper reveal">
+                    <img src="https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="eCommerce Solutions" class="solution-image-top">
+                    <div class="solution-content-attached p-8">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-shopping-cart text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">eCommerce Solutions</h3>
+                        </div>
+                        <p class="text-gray-300 mb-6">Empower your online store with scalable cloud hosting, secure
+                            payment
+                            gateways, and integrated shipping solutions that grow with your business.</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-400 text-sm"></i>
+                                <span class="text-gray-300 text-sm">Auto-scaling infrastructure</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-400 text-sm"></i>
+                                <span class="text-gray-300 text-sm">Global CDN for faster page loads</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-400 text-sm"></i>
+                                <span class="text-gray-300 text-sm">PCI DSS compliance</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 rounded-lg transition-all font-semibold">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="solution-card-wrapper reveal">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Healthcare Solutions" class="solution-image-top">
+                    <div class="solution-content-attached p-8">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-heartbeat text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Healthcare Solutions</h3>
+                        </div>
+                        <p class="text-gray-300 mb-6">Ensure compliance and security with our HIPAA-compliant cloud
+                            infrastructure, enabling secure patient data management and telemedicine.</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-400 text-sm"></i>
+                                <span class="text-gray-300 text-sm">HIPAA compliance</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-400 text-sm"></i>
+                                <span class="text-gray-300 text-sm">End-to-end encrypted storage</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-400 text-sm"></i>
+                                <span class="text-gray-300 text-sm">Disaster recovery and backup</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-3 rounded-lg transition-all font-semibold">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="solution-card-wrapper reveal">
+                    <img src="ai.png" alt="AI Development Platform" class="solution-image-top">
+                    <div class="solution-content-attached p-8">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-robot text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">AI Development Platform</h3>
+                        </div>
+                        <p class="text-gray-300 mb-6">Advanced AI infrastructure for machine learning, deep learning,
+                            and
+                            AGI model development and deployment at enterprise scale.</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-400 text-sm"></i>
+                                <span class="text-gray-300 text-sm">GPU-accelerated computing</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-400 text-sm"></i>
+                                <span class="text-gray-300 text-sm">Pre-built AI models</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check text-green-400 text-sm"></i>
+                                <span class="text-gray-300 text-sm">MLOps pipelines</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white py-3 rounded-lg transition-all font-semibold">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section with Seamless Dark Theme -->
+    <section id="success-stories" class="py-24 seamless-dark">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl lg:text-6xl font-black mb-6 text-white">
+                    <span class="gradient-text">Success Stories</span> that Inspire
+                </h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Discover how leading organizations transformed their operations and achieved remarkable results with
+                    NUBEX Cloud solutions.
+                </p>
+            </div>
+
+            <!-- Large Success Story Cards -->
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div class="glass-card rounded-2xl p-12 reveal min-h-[400px]">
+                    <div class="flex items-center mb-8">
+                        <img src="https://images.unsplash.com/photo-1682357843568-ae495fa2b2ed?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="TechCorp Industries" class="w-20 h-20 rounded-2xl object-cover mr-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">TechCorp Industries</h3>
+                            <p class="text-gray-300">Global Manufacturing Leader</p>
+                            <div class="flex mt-2">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-green-400 mb-2">300%</div>
+                            <p class="text-gray-300 text-sm">Deployment Speed</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-blue-400 mb-2">99.9%</div>
+                            <p class="text-gray-300 text-sm">Uptime</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-purple-400 mb-2">50%</div>
+                            <p class="text-gray-300 text-sm">Cost Savings</p>
+                        </div>
+                    </div>
+
+                    <blockquote class="text-lg text-gray-300 mb-8 italic border-l-4 border-blue-500 pl-6">
+                        "NUBEX Cloud transformed our entire manufacturing operation. The migration from our legacy
+                        systems
+                        was seamless, and we saw immediate improvements in performance and reliability. Our deployment
+                        pipeline went from taking hours to just minutes."
+                    </blockquote>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span class="text-gray-300">Migrated 200+ applications in 3 months</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span class="text-gray-300">Zero downtime during migration</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span class="text-gray-300">24/7 dedicated support throughout</span>
+                        </div>
+                    </div>
+
+                    <button
+                        class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all font-semibold">
+                        Read Full Case Study <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <div class="glass-card rounded-2xl p-12 reveal min-h-[400px]">
+                    <div class="flex items-center mb-8">
+                        <img src="https://images.unsplash.com/photo-1607838720191-0d8eba3e9040?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="MediHealth Systems" class="w-20 h-20 rounded-2xl object-cover mr-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">MediHealth Systems</h3>
+                            <p class="text-gray-300">Healthcare Innovation Leader</p>
+                            <div class="flex mt-2">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-green-400 mb-2">99.99%</div>
+                            <p class="text-gray-300 text-sm">System Uptime</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-blue-400 mb-2">500K+</div>
+                            <p class="text-gray-300 text-sm">Patients Served</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-purple-400 mb-2">100%</div>
+                            <p class="text-gray-300 text-sm">HIPAA Compliant</p>
+                        </div>
+                    </div>
+
+                    <blockquote class="text-lg text-gray-300 mb-8 italic border-l-4 border-green-500 pl-6">
+                        "Patient safety and data security are our top priorities. NUBEX Cloud's HIPAA-compliant
+                        infrastructure gave us the confidence to digitize our entire patient management system.
+                        The result has been transformational for both our staff and patients."
+                    </blockquote>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span class="text-gray-300">Full HIPAA compliance achieved</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span class="text-gray-300">Real-time patient monitoring enabled</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span class="text-gray-300">Telemedicine platform integrated</span>
+                        </div>
+                    </div>
+
+                    <button
+                        class="bg-gradient-to-r from-green-500 to-teal-600 text-white px-8 py-3 rounded-lg hover:from-green-600 hover:to-teal-700 transition-all font-semibold">
+                        Read Full Case Study <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Customer Metrics -->
+            <div class="glass-card p-8 rounded-2xl reveal">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold mb-4 text-white">Proven Results Across Industries</h3>
+                    <p class="text-gray-300">Our customers consistently achieve exceptional outcomes</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-400 mb-2">10,000+</div>
+                        <div class="text-gray-300">Happy Customers</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-green-400 mb-2">95%</div>
+                        <div class="text-gray-300">Customer Satisfaction</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-purple-400 mb-2">40%</div>
+                        <div class="text-gray-300">Average Cost Savings</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-orange-400 mb-2">150+</div>
+                        <div class="text-gray-300">Countries Served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 seamless-dark">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl lg:text-6xl font-black mb-6">
+                    What Our <span class="gradient-text">Customers Say</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Don't just take our word for it. Hear from the leaders who trust NUBEX Cloud to power their most
+                    critical applications.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-2xl p-8 reveal">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1659353220441-9207b962a133?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Sarah Chen" class="testimonial-image mr-4">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg">Sarah Chen</h4>
+                            <p class="text-gray-400 text-sm">CTO, TechFlow Inc.</p>
+                            <p class="text-blue-400 text-xs">San Francisco, CA</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <blockquote class="text-gray-300 mb-6 text-lg italic">
+                        "NUBEX Cloud's auto-scaling capabilities saved us during our biggest product launch. We went
+                        from
+                        worrying about server capacity to focusing entirely on our users. The seamless performance under
+                        extreme load was absolutely incredible."
+                    </blockquote>
+                    <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+                        <div class="text-sm text-blue-400 font-semibold">Key Result:</div>
+                        <div class="text-white">Migration completed in 2 weeks</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8 reveal">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face"
+                            alt="James Rodriguez" class="testimonial-image mr-4">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg">James Rodriguez</h4>
+                            <p class="text-gray-400 text-sm">IT Director, GlobalCorp</p>
+                            <p class="text-blue-400 text-xs">London, UK</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <blockquote class="text-gray-300 mb-6 text-lg italic">
+                        "The cost savings alone justified our move to NUBEX, but the 24/7 support and reliability have
+                        been game-changing for our global operations. Our infrastructure costs dropped by 60% while
+                        performance actually improved."
+                    </blockquote>
+                    <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
+                        <div class="text-sm text-green-400 font-semibold">Key Result:</div>
+                        <div class="text-white">60% reduction in infrastructure costs</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8 reveal">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
+                            alt="Dr. Aisha Kumar" class="testimonial-image mr-4">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg">Dr. Aisha Kumar</h4>
+                            <p class="text-gray-400 text-sm">Founder, HealthTech Solutions</p>
+                            <p class="text-blue-400 text-xs">Toronto, Canada</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <blockquote class="text-gray-300 mb-6 text-lg italic">
+                        "HIPAA compliance was absolutely critical for our healthcare platform. NUBEX made it seamless
+                        while providing the performance and reliability our patients depend on. We now serve over 50,000
+                        patients with complete confidence."
+                    </blockquote>
+                    <div class="bg-purple-500/10 border border-purple-500/20 rounded-lg p-4">
+                        <div class="text-sm text-purple-400 font-semibold">Key Result:</div>
+                        <div class="text-white">100% compliance maintained</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events Section (Enhanced White Background) -->
+    <section id="news" class="py-24 white-section">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl lg:text-6xl font-black mb-6">
+                    Latest <span class="gradient-text">News & Events</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Stay updated with the latest developments, product launches, and industry insights from NUBEX Cloud.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="news-card rounded-2xl overflow-hidden reveal">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop&crop=center"
+                        alt="AI Studio Launch" class="news-image">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-semibold">Product
+                                Launch</span>
+                            <span class="text-gray-500 text-sm">May 28, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">NUBEX AI Studio Now Available</h3>
+                        <p class="text-gray-600 mb-4">Introducing our comprehensive AI development platform with
+                            pre-trained models, custom training capabilities, and seamless deployment tools.</p>
+                        <button class="text-blue-500 hover:text-blue-600 transition-colors font-semibold">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="news-card rounded-2xl overflow-hidden reveal">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=200&fit=crop&crop=center"
+                        alt="Partnership Announcement" class="news-image">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-4">
+                            <span
+                                class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-semibold">Partnership</span>
+                            <span class="text-gray-500 text-sm">May 25, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Strategic Partnership with TechGiant Corp</h3>
+                        <p class="text-gray-600 mb-4">Expanding our global reach and capabilities through a strategic
+                            partnership that brings enhanced services to the MENA region.</p>
+                        <button class="text-blue-500 hover:text-blue-600 transition-colors font-semibold">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="news-card rounded-2xl overflow-hidden reveal">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=200&fit=crop&crop=center"
+                        alt="Cloud Summit 2025" class="news-image">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-4">
+                            <span
+                                class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-semibold">Event</span>
+                            <span class="text-gray-500 text-sm">June 15, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Cloud Summit 2025 - Dubai</h3>
+                        <p class="text-gray-600 mb-4">Join us at the biggest cloud technology conference in the Middle
+                            East.
+                            Featured sessions on AI, edge computing, and digital transformation.</p>
+                        <button class="text-blue-500 hover:text-blue-600 transition-colors font-semibold">
+                            Register Now <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div class="white-glass-card p-8 rounded-2xl reveal">
+                <h3 class="text-2xl font-bold mb-6 text-center">Upcoming Events</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-calendar text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">AI Workshop Series</h4>
+                            <p class="text-gray-600 text-sm">June 1-3, 2025 | Virtual</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-users text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Customer Success Summit</h4>
+                            <p class="text-gray-600 text-sm">June 20, 2025 | Dubai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 seamless-dark">
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl lg:text-6xl font-black mb-6 whitespace-nowrap">
+                    Frequently Asked <span class="gradient-text">Questions</span> </h2>
+                <p class="text-xl text-gray-300 leading-relaxed">
+                    Find answers to common questions about our cloud services and solutions.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="faq-item reveal">
+                    <button
+                        class="faq-question w-full text-left p-6 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                        onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-semibold text-white">What cloud service models do you offer?</h3>
+                            <i class="fas fa-plus text-blue-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0">
+                            <p class="text-gray-300">We offer comprehensive cloud services including Infrastructure as a
+                                Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). Our
+                                solutions span public, private, hybrid, and edge computing models to meet diverse
+                                business requirements.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button
+                        class="faq-question w-full text-left p-6 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                        onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-semibold text-white">How secure is NUBEX Cloud?</h3>
+                            <i class="fas fa-plus text-blue-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0">
+                            <p class="text-gray-300">Security is our top priority. We maintain ISO 27001 certification,
+                                implement multi-layered security protocols, offer end-to-end encryption, and ensure
+                                compliance with industry standards including HIPAA, GDPR, and PCI DSS. Our
+                                infrastructure includes 24/7 monitoring and automated threat detection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button
+                        class="faq-question w-full text-left p-6 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                        onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-semibold text-white">What is your uptime SLA?</h3>
+                            <i class="fas fa-plus text-blue-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0">
+                            <p class="text-gray-300">We guarantee 99.9% uptime SLA across all our services. Our
+                                redundant infrastructure, automatic failover systems, and global load balancing ensure
+                                maximum availability. We also provide detailed SLA reports and service credits for any
+                                downtime beyond our commitment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button
+                        class="faq-question w-full text-left p-6 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                        onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-semibold text-white">Do you offer migration assistance?</h3>
+                            <i class="fas fa-plus text-blue-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0">
+                            <p class="text-gray-300">Yes! We provide comprehensive migration services including
+                                assessment, planning, execution, and post-migration support. Our migration specialists
+                                work with you to minimize downtime and ensure a smooth transition from your current
+                                infrastructure to NUBEX Cloud.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button
+                        class="faq-question w-full text-left p-6 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                        onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-semibold text-white">What support options are available?</h3>
+                            <i class="fas fa-plus text-blue-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0">
+                            <p class="text-gray-300">We offer 24/7 customer support through multiple channels including
+                                phone, email, live chat, and support tickets. Our support team includes cloud
+                                architects, DevOps engineers, and technical specialists. We also provide dedicated
+                                account managers for enterprise customers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button
+                        class="faq-question w-full text-left p-6 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                        onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-semibold text-white">How does pricing work?</h3>
+                            <i class="fas fa-plus text-blue-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0">
+                            <p class="text-gray-300">We offer transparent, pay-as-you-go pricing with no hidden fees.
+                                You only pay for the resources you use, with automatic scaling to optimize costs. We
+                                also provide volume discounts, reserved instance pricing, and custom enterprise
+                                packages. Use our online calculator for instant pricing estimates.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button
+                        class="faq-question w-full text-left p-6 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                        onclick="toggleFaq(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-semibold text-white">Can I try NUBEX Cloud before committing?</h3>
+                            <i class="fas fa-plus text-blue-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0">
+                            <p class="text-gray-300">Absolutely! We offer a free trial with $300 in credits to explore
+                                our services. No credit card required. You can test our full range of services including
+                                compute, storage, databases, and AI/ML tools during your trial period.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Pricing Section with Server Auction and Timer -->
+    <section id="pricing" class="py-24 white-section">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl lg:text-6xl font-black mb-6">Transparent Pricing</h2>
+                <p class="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Get real-time pricing for your cloud infrastructure needs with our intelligent cost calculator.
+                    No hidden fees, no surprises - just transparent, scalable pricing.
+                </p>
+            </div>
+
+            <!-- Enhanced Server Auction Section with Timer -->
+            <div class="auction-card p-8 rounded-2xl mb-16 reveal relative overflow-hidden">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold mb-4">
+                        <span class="gradient-text">🔥 Server Auction</span>
+                        <span class="text-orange-500 ml-2">⏱️ Limited Time Offers!</span>
+                    </h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto mb-6">
+                        Bid on premium servers at unbeatable prices. Don't wait too long or somebody else might beat you
+                        to the bargain.
+                        These flash deals expire fast!
+                    </p>
+                    <div class="timer-display mx-auto mb-6" id="auction-timer">
+                        Loading...
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div
+                            class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-lg border-2 border-orange-200 relative">
+                            <div
+                                class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                                HOT DEAL!
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">AMD Ryzen 9 5950X</h4>
+                            <div class="text-3xl font-black text-red-600 mb-2">€28.00/mo</div>
+                            <div class="text-sm text-gray-500 line-through mb-1">€45.00/mo</div>
+                            <p class="text-gray-600 text-sm mb-4">64GB RAM, 2TB NVMe SSD</p>
+                            <div class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-semibold mb-3">
+                                38% OFF - 12 left
+                            </div>
+                            <button
+                                class="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg font-semibold transition-all">
+                                Claim Deal
+                            </button>
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg border-2 border-blue-200 relative">
+                            <div
+                                class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                                TRENDING
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Intel Xeon Gold</h4>
+                            <div class="text-3xl font-black text-blue-600 mb-2">€45.00/mo</div>
+                            <div class="text-sm text-gray-500 line-through mb-1">€68.00/mo</div>
+                            <p class="text-gray-600 text-sm mb-4">128GB RAM, 4TB NVMe SSD</p>
+                            <div class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-semibold mb-3">
+                                34% OFF - 8 left
+                            </div>
+                            <button
+                                class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-semibold transition-all">
+                                Claim Deal
+                            </button>
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-lg border-2 border-green-200 relative">
+                            <div
+                                class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                                AI READY
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">NVIDIA A100 GPU</h4>
+                            <div class="text-3xl font-black text-green-600 mb-2">€184.00/mo</div>
+                            <div class="text-sm text-gray-500 line-through mb-1">€289.00/mo</div>
+                            <p class="text-gray-600 text-sm mb-4">AI workloads, 80GB GPU memory</p>
+                            <div class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs font-semibold mb-3">
+                                36% OFF - 3 left
+                            </div>
+                            <button
+                                class="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg font-semibold transition-all">
+                                Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Categories with Competitive Pricing -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="white-glass-card p-6 text-center reveal">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cloud text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cloud Servers</h3>
+                    <div class="text-2xl font-black text-blue-600 mb-2">from €3.79</div>
+                    <p class="text-gray-600 text-sm mb-4">Flexible cloud servers with high-end hardware</p>
+                    <button
+                        class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-lg transition-all font-semibold text-sm">
+                        Overview
+                    </button>
+                </div>
+
+                <div class="white-glass-card p-6 text-center reveal">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-server text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dedicated Servers</h3>
+                    <div class="text-2xl font-black text-green-600 mb-2">from €37.30</div>
+                    <p class="text-gray-600 text-sm mb-4">Root servers for any need with top performance</p>
+                    <button
+                        class="bg-gradient-to-r from-green-500 to-teal-600 text-white px-6 py-2 rounded-lg transition-all font-semibold text-sm">
+                        Overview
+                    </button>
+                </div>
+
+                <div class="white-glass-card p-6 text-center reveal">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-robot text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">GPU Servers</h3>
+                    <div class="text-2xl font-black text-purple-600 mb-2">from €184.00</div>
+                    <p class="text-gray-600 text-sm mb-4">Powerful GPU servers for AI workloads</p>
+                    <button
+                        class="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-2 rounded-lg transition-all font-semibold text-sm">
+                        See GPU servers
+                    </button>
+                </div>
+
+                <div class="white-glass-card p-6 text-center reveal">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Web Hosting</h3>
+                    <div class="text-2xl font-black text-orange-600 mb-2">from €1.76</div>
+                    <p class="text-gray-600 text-sm mb-4">Quick & cheap way to your homepage</p>
+                    <button
+                        class="bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-2 rounded-lg transition-all font-semibold text-sm">
+                        Overview
+                    </button>
+                </div>
+            </div>
+
+            <!-- Additional Services -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="white-glass-card p-6 reveal">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="text-lg font-bold">Storage Solutions</h4>
+                        <div class="text-xl font-black text-blue-600">from €3.20</div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Storage Boxes</span>
+                            <span class="text-green-600 font-semibold">€3.20/month</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Storage Share</span>
+                            <span class="text-green-600 font-semibold">€4.29/month</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Object Storage</span>
+                            <span class="text-green-600 font-semibold">€0.005/GB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="white-glass-card p-6 reveal">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="text-lg font-bold">Managed Services</h4>
+                        <div class="text-xl font-black text-purple-600">from €34.00</div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Managed Servers</span>
+                            <span class="text-green-600 font-semibold">€34.00/month</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Database Management</span>
+                            <span class="text-green-600 font-semibold">€45.00/month</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">24/7 Monitoring</span>
+                            <span class="text-green-600 font-semibold">€25.00/month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="white-glass-card p-6 reveal">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="text-lg font-bold">Enterprise Solutions</h4>
+                        <div class="text-xl font-black text-green-600">Custom</div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Colocation</span>
+                            <span class="text-green-600 font-semibold">from €100/month</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Custom Solutions</span>
+                            <span class="text-green-600 font-semibold">On demand</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Dedicated Support</span>
+                            <span class="text-green-600 font-semibold">Included</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Startup Support Program -->
+            <div class="white-glass-card p-8 rounded-2xl mb-12 reveal">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold mb-4">
+                        <span class="gradient-text">Startup Support Program</span>
+                    </h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Accelerate your startup's growth with up to $10,000 in cloud credits, dedicated support, and
+                        access to our partner network.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-rocket text-white text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">$10K Credits</h4>
+                        <p class="text-gray-600 text-sm">Free cloud credits for qualified startups</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-white text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Dedicated Support</h4>
+                        <p class="text-gray-600 text-sm">Priority technical support and account management</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-network-wired text-white text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Partner Network</h4>
+                        <p class="text-gray-600 text-sm">Access to investors, mentors, and technology partners</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center reveal">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button id="launch-calculator"
+                        class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl transition-colors font-bold text-lg shadow-xl">
+                        <i class="fas fa-calculator mr-2"></i>
+                        Launch Price Calculator
+                    </button>
+                    <button
+                        class="bg-transparent border-2 border-blue-500 text-blue-600 px-8 py-4 rounded-xl hover:bg-blue-50 transition-all font-bold text-lg">
+                        <i class="fas fa-phone mr-2"></i>
+                        Talk to Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Awards Section with Real Award Images -->
+    <section class="py-16 seamless-dark">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl font-bold mb-4 text-white">
+                    Industry <span class="gradient-text">Recognition</span>
+                </h2>
+                <p class="text-gray-300">Trusted by industry leaders and recognized for excellence</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+                <div class="award-card reveal">
+                    <img src="https://images.unsplash.com/photo-1578269174936-2709b6aeb913?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Gold Award" class="award-image">
+                    <div class="text-white font-semibold text-sm">Gold Award</div>
+                    <div class="text-gray-400 text-xs">Server Provider 2025</div>
+                </div>
+                <div class="award-card reveal">
+                    <img src="https://images.unsplash.com/photo-1585155844510-de0df7f65c6f?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="ECO Award" class="award-image">
+                    <div class="text-white font-semibold text-sm">ECO Award</div>
+                    <div class="text-gray-400 text-xs">Green Technology</div>
+                </div>
+                <div class="award-card reveal">
+                    <img src="best.png" alt="Best Cloud" class="award-image">
+                    <div class="text-white font-semibold text-sm">Best Cloud</div>
+                    <div class="text-gray-400 text-xs">Readers' Choice 2024</div>
+                </div>
+                <div class="award-card reveal">
+                    <img src="innovation.png" alt="Innovation Award" class="award-image">
+                    <div class="text-white font-semibold text-sm">Innovation</div>
+                    <div class="text-gray-400 text-xs">Tech Excellence</div>
+                </div>
+                <div class="award-card reveal">
+                    <img src="secure.png" alt="Security Award" class="award-image">
+                    <div class="text-white font-semibold text-sm">Security</div>
+                    <div class="text-gray-400 text-xs">ISO 27001 Certified</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 white-section">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl lg:text-6xl font-black mb-6">
+                    Get in <span class="gradient-text">Touch</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Ready to transform your business? Contact our experts to discuss your cloud infrastructure needs.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="white-glass-card p-8 rounded-2xl reveal">
+                    <h3 class="text-2xl font-bold mb-6">Send us a message</h3>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">First Name</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Last Name</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                            <input type="email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Company</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Service Interest</label>
+                            <select
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                                <option>Select a service</option>
+                                <option>Cloud Servers</option>
+                                <option>Dedicated Servers</option>
+                                <option>GPU Servers for AI</option>
+                                <option>Managed Services</option>
+                                <option>Enterprise Solutions</option>
+                                <option>Migration Services</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Message</label>
+                            <textarea rows="4"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
+                                placeholder="Tell us about your project requirements..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-4 rounded-lg transition-all font-bold text-lg shadow-xl">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="white-glass-card p-8 rounded-2xl reveal">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Headquarters</h4>
+                                    <p class="text-gray-600">Dubai Internet City, UAE</p>
+                                    <p class="text-gray-600">Building 3, Office 123</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-phone text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Phone</h4>
+                                    <p class="text-gray-600">+1-800-NUBEX-24</p>
+                                    <p class="text-gray-600">+971-4-123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-envelope text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p class="text-gray-600">sales@nubex.cloud</p>
+                                    <p class="text-gray-600">support@nubex.cloud</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-clock text-orange-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Business Hours</h4>
+                                    <p class="text-gray-600">24/7 Support Available</p>
+                                    <p class="text-gray-600">Sales: Mon-Fri 9AM-6PM UTC</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="white-glass-card p-8 rounded-2xl reveal">
+                        <h3 class="text-xl font-bold mb-4">Need immediate assistance?</h3>
+                        <p class="text-gray-600 mb-6">Our sales team is ready to help you find the perfect solution.</p>
+                        <div class="space-y-4">
+                            <button
+                                class="w-full bg-gradient-to-r from-green-500 to-teal-600 text-white py-3 rounded-lg font-semibold transition-all hover:from-green-600 hover:to-teal-700">
+                                <i class="fas fa-phone mr-2"></i>
+                                Schedule a Call
+                            </button>
+                            <button
+                                class="w-full bg-transparent border-2 border-blue-500 text-blue-600 py-3 rounded-lg font-semibold transition-all hover:bg-blue-50">
+                                <i class="fas fa-comments mr-2"></i>
+                                Live Chat Support
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced CTA Section -->
+    <section class="py-24 bg-gradient-to-r from-blue-600/30 via-purple-600/30 to-pink-600/30 relative">
+        <div class="absolute inset-0 bg-[#0B0D17]/50"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="reveal">
+                <h2 class="text-4xl lg:text-6xl font-black text-white mb-6">
+                    Ready to Transform Your Business?
+                </h2>
+                <p class="text-xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Join thousands of businesses that trust NUBEX Cloud for their infrastructure needs. Start your free
+                    trial today and experience the power of enterprise-grade cloud computing.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <button
+                        class="bg-white text-blue-600 px-10 py-4 rounded-xl hover:bg-blue-50 transition-all font-bold text-lg shadow-xl">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Start Free Trial
+                    </button>
+                    <button
+                        class="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-10 py-4 rounded-xl hover:bg-white/20 transition-all font-bold text-lg">
+                        <i class="fas fa-phone mr-2"></i>
+                        Talk to Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-[#0B0D17] text-white border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="logo-container">
+                        <img src="nubex.png" alt="NUBEX Cloud Logo" class="logo-image">
+                    </div>
+                    <p class="text-gray-400 mb-8 max-w-md leading-relaxed">
+                        Revolutionizing cloud technology for businesses worldwide with reliable, scalable, and secure
+                        infrastructure solutions that drive digital transformation.
+                    </p>
+
+                    <!-- Contact Information -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-blue-400 text-sm"></i>
+                            </div>
+                            <span class="text-gray-400">Dubai Internet City, UAE</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-green-400 text-sm"></i>
+                            </div>
+                            <span class="text-gray-400">+1-800-NUBEX-24</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-purple-400 text-sm"></i>
+                            </div>
+                            <span class="text-gray-400">info@nubex.cloud</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-blue-600/20 transition-colors group">
+                            <i class="fab fa-twitter text-blue-400 group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-blue-600/20 transition-colors group">
+                            <i class="fab fa-linkedin text-blue-400 group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-purple-600/20 transition-colors group">
+                            <i class="fab fa-github text-purple-400 group-hover:scale-110 transition-transform"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-pink-600/20 transition-colors group">
+                            <i class="fab fa-youtube text-pink-400 group-hover:scale-110 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cloud Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-blue-400">Cloud Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Infrastructure
+                                (IaaS)</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Platform (PaaS)</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Software (SaaS)</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Edge Computing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">AI & Machine
+                                Learning</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Hybrid Cloud</a></li>
+                    </ul>
+                </div>
+
+                <!-- Solutions -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-green-400">Solutions</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">eCommerce</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Finance</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Media &
+                                Entertainment</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Government</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Manufacturing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support & Company -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-purple-400">Support & Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Knowledge Base</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">System Status</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Customer Success</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="glass-card p-8 rounded-2xl mb-8">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Stay Updated</h3>
+                        <p class="text-gray-300">Get the latest cloud insights, product updates, and industry news
+                            delivered to your inbox.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                        <input type="email" placeholder="Enter your email"
+                            class="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500">
+                        <button
+                            class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all font-semibold">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2025 NUBEX Cloud. All rights reserved.
+                    </div>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Compliance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Price Calculator Modal -->
+    <div id="calculator-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-gray-800">Cloud Price Calculator</h2>
+                <button id="close-calculator" class="text-gray-500 hover:text-gray-700 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Service Type</label>
+                        <select id="service-type"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            <option value="cloud-server">Cloud Server</option>
+                            <option value="dedicated-server">Dedicated Server</option>
+                            <option value="gpu-server">GPU Server</option>
+                            <option value="storage">Storage</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">CPU Cores</label>
+                        <input type="range" id="cpu-cores" min="1" max="32" value="4" class="w-full">
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>1 Core</span>
+                            <span id="cpu-display">4 Cores</span>
+                            <span>32 Cores</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Memory (GB)</label>
+                        <input type="range" id="memory" min="1" max="256" value="16" class="w-full">
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>1 GB</span>
+                            <span id="memory-display">16 GB</span>
+                            <span>256 GB</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Storage (GB)</label>
+                        <input type="range" id="storage" min="20" max="2000" value="100" class="w-full">
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>20 GB</span>
+                            <span id="storage-display">100 GB</span>
+                            <span>2000 GB</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Region</label>
+                        <select id="region"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            <option value="us-east">US East (N. Virginia)</option>
+                            <option value="us-west">US West (California)</option>
+                            <option value="eu-west">Europe (Ireland)</option>
+                            <option value="ap-southeast">Asia Pacific (Singapore)</option>
+                            <option value="me-south">Middle East (Dubai)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Pricing Estimate</h3>
+
+                    <div class="space-y-4 mb-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Base Price:</span>
+                            <span class="font-semibold" id="base-price">€15.50/month</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">CPU Upgrade:</span>
+                            <span class="font-semibold" id="cpu-price">€12.00/month</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Memory Upgrade:</span>
+                            <span class="font-semibold" id="memory-price">€8.00/month</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Storage:</span>
+                            <span class="font-semibold" id="storage-price">€5.00/month</span>
+                        </div>
+                        <hr class="my-4">
+                        <div class="flex justify-between items-center text-xl font-bold">
+                            <span>Total Monthly:</span>
+                            <span class="text-blue-600" id="total-price">€40.50/month</span>
+                        </div>
+                        <div class="flex justify-between items-center text-lg">
+                            <span>Annual (20% off):</span>
+                            <span class="text-green-600" id="annual-price">€388.80/year</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <button
+                            class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all">
+                            Deploy This Configuration
+                        </button>
+                        <button
+                            class="w-full bg-gray-200 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-all">
+                            Save Quote
+                        </button>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-green-100 rounded-lg">
+                        <div class="text-green-800 font-semibold text-sm">💡 Optimization Tip:</div>
+                        <div class="text-green-700 text-sm">Consider our annual plan to save 20% on your cloud costs!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced JavaScript -->
+    <script>
+        // Timer for server auction
+        function startAuctionTimer() {
+            const timerElement = document.getElementById('auction-timer');
+            let timeLeft = 3 * 60 * 60 + 59 * 60 + 59; // 3:59:59
+
+            function updateTimer() {
+                const hours = Math.floor(timeLeft / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = timeLeft % 60;
+
+                timerElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                if (timeLeft > 0) {
+                    timeLeft--;
+                } else {
+                    timeLeft = 3 * 60 * 60 + 59 * 60 + 59; // Reset timer
+                }
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        // Price Calculator functionality
+        function initPriceCalculator() {
+            const modal = document.getElementById('calculator-modal');
+            const launchBtn = document.getElementById('launch-calculator');
+            const closeBtn = document.getElementById('close-calculator');
+
+            const cpuSlider = document.getElementById('cpu-cores');
+            const memorySlider = document.getElementById('memory');
+            const storageSlider = document.getElementById('storage');
+            const serviceType = document.getElementById('service-type');
+
+            const cpuDisplay = document.getElementById('cpu-display');
+            const memoryDisplay = document.getElementById('memory-display');
+            const storageDisplay = document.getElementById('storage-display');
+
+            const basePriceEl = document.getElementById('base-price');
+            const cpuPriceEl = document.getElementById('cpu-price');
+            const memoryPriceEl = document.getElementById('memory-price');
+            const storagePriceEl = document.getElementById('storage-price');
+            const totalPriceEl = document.getElementById('total-price');
+            const annualPriceEl = document.getElementById('annual-price');
+
+            function calculatePrice() {
+                const basePrice = 15.50;
+                const cpuPrice = (parseInt(cpuSlider.value) - 1) * 3.50;
+                const memoryPrice = (parseInt(memorySlider.value) - 1) * 0.50;
+                const storagePrice = (parseInt(storageSlider.value) - 20) * 0.05;
+
+                const total = basePrice + cpuPrice + memoryPrice + storagePrice;
+                const annual = total * 12 * 0.8; // 20% discount
+
+                basePriceEl.textContent = `€${basePrice.toFixed(2)}/month`;
+                cpuPriceEl.textContent = `€${cpuPrice.toFixed(2)}/month`;
+                memoryPriceEl.textContent = `€${memoryPrice.toFixed(2)}/month`;
+                storagePriceEl.textContent = `€${storagePrice.toFixed(2)}/month`;
+                totalPriceEl.textContent = `€${total.toFixed(2)}/month`;
+                annualPriceEl.textContent = `€${annual.toFixed(2)}/year`;
+            }
+
+            function updateDisplays() {
+                cpuDisplay.textContent = `${cpuSlider.value} Cores`;
+                memoryDisplay.textContent = `${memorySlider.value} GB`;
+                storageDisplay.textContent = `${storageSlider.value} GB`;
+                calculatePrice();
+            }
+
+            launchBtn.addEventListener('click', () => {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            cpuSlider.addEventListener('input', updateDisplays);
+            memorySlider.addEventListener('input', updateDisplays);
+            storageSlider.addEventListener('input', updateDisplays);
+            serviceType.addEventListener('change', updateDisplays);
+
+            // Initial calculation
+            updateDisplays();
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = this.querySelector('i');
+
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        const menuIcon = document.querySelector('#mobile-menu-button i');
+                        menuIcon.classList.remove('fa-times');
+                        menuIcon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+
+        // Enhanced counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stats-counter');
+            counters.forEach(counter => {
+                const text = counter.textContent;
+                const target = parseInt(text.replace(/[^0-9]/g, '')) || 0;
+                const isPercentage = text.includes('%');
+                const isSpecial = text.includes('quadrillion');
+
+                let current = 0;
+                const increment = target / 60;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        if (isSpecial) {
+                            counter.textContent = '11 quadrillion';
+                        } else {
+                            counter.textContent = target + (isPercentage ? '%' : '');
+                        }
+                        clearInterval(timer);
+                    } else {
+                        if (isSpecial) {
+                            counter.textContent = Math.floor(current) + ' quadrillion';
+                        } else {
+                            counter.textContent = Math.floor(current) + (isPercentage ? '%' : '');
+                        }
+                    }
+                }, 50);
+            });
+        }
+
+        // FAQ toggle function
+        function toggleFaq(button) {
+            const answer = button.parentNode.querySelector('.faq-answer');
+            const icon = button.querySelector('i');
+
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                }
+            });
+
+            document.querySelectorAll('.faq-question i').forEach(item => {
+                if (item !== icon) {
+                    item.classList.remove('fa-minus');
+                    item.classList.add('fa-plus');
+                    item.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Toggle current FAQ item
+            if (answer.classList.contains('active')) {
+                answer.classList.remove('active');
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                answer.classList.add('active');
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Enhanced fade-in animation system
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('stats-counter')) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+
+                    if (entry.target.classList.contains('reveal')) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+
+                    if (entry.target.classList.contains('fade-in-element')) {
+                        entry.target.style.animation = 'fadeInUp 1s ease-out forwards';
+                        observer.unobserve(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all reveal elements, stats counters, and fade-in elements
+        document.querySelectorAll('.reveal, .stats-counter, .fade-in-element').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Enhanced navbar background on scroll
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('nav');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > 100) {
+                navbar.style.background = 'rgba(11, 13, 23, 0.95)';
+                navbar.style.backdropFilter = 'blur(20px)';
+            } else {
+                navbar.style.background = 'rgba(11, 13, 23, 0.9)';
+                navbar.style.backdropFilter = 'blur(12px)';
+            }
+
+            lastScrollTop = scrollTop;
+        });
+
+        // Initialize all effects when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            startAuctionTimer();
+            initPriceCalculator();
+
+            // Add loading animation
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 1s ease-in';
+                document.body.style.opacity = '1';
+            }, 100);
+
+            // Initialize fade-in elements with delay
+            const fadeElements = document.querySelectorAll('.fade-in-element');
+            fadeElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 1s ease-out';
+
+                const delay = parseFloat(element.style.animationDelay) || index * 0.2;
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, delay * 1000);
+            });
+
+            console.log('NUBEX Cloud website loaded successfully with enhanced features');
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+        });
+
+        // Newsletter subscription
+        const newsletterInput = document.querySelector('input[type="email"]');
+        if (newsletterInput) {
+            newsletterInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    const email = this.value;
+                    if (email) {
+                        alert('Thank you for subscribing! We\'ll keep you updated with the latest news.');
+                        this.value = '';
+                    }
+                }
+            });
+        }
+
+        // Add hover effects for dashboard metrics
+        document.querySelectorAll('.dashboard-metric').forEach(metric => {
+            metric.addEventListener('mouseenter', function () {
+                this.style.transform = 'scale(1.05) translateY(-2px)';
+                this.style.boxShadow = '0 10px 25px rgba(96, 165, 250, 0.3)';
+            });
+
+            metric.addEventListener('mouseleave', function () {
+                this.style.transform = 'scale(1) translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>
